@@ -74,9 +74,10 @@ app_server <- function(source_spe,
       bindEvent(source_spe, nbins)
     reference_image <- reactive({
       reference_spe |>
-        convert_spe_to_image(nbins_x = nbins, nbins_y = nbins)
-    }) |>
-      bindEvent(reference_spe, nbins)
+        as_bins() %>%
+        convert_binned_spe_to_image()
+    }) |>                             #
+      bindEvent(reference_spe, nbins) # 
 
     output$source_image <- renderPlot({
       plot_counts(source_image(), input$flip_source,
