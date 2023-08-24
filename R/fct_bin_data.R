@@ -30,13 +30,13 @@ add_bins <- function(spe,
   spe
 }
 
-as_bins <- function(spe){
-  binx <- spatialCoords(spe)[, 1]
-  biny <- spatialCoords(spe)[, 2]
-  colData(spe) <- cbind(colData(spe), binx = binx, biny = biny)
-  
-  spe
-}
+# as_bins <- function(spe){
+#   binx <- spatialCoords(spe)[, 1]
+#   biny <- spatialCoords(spe)[, 2]
+#   colData(spe) <- cbind(colData(spe), binx = binx, biny = biny)
+#   
+#   spe
+# }
 
 #' Convert a Spatial Experiment object to a rasterized image
 #'

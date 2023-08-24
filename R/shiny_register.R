@@ -74,8 +74,7 @@ app_server <- function(source_spe,
       bindEvent(source_spe, nbins)
     reference_image <- reactive({
       reference_spe |>
-        as_bins() %>%
-        convert_binned_spe_to_image()
+        convert_spe_to_image(nbins_x = 20, nbins_y = 20)
     }) |>                             #
       bindEvent(reference_spe, nbins) # 
 
